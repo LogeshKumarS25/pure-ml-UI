@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*    
+   font-family: "Pacifico", cursive;
+   font-family: "Kanit", sans-serif;
+   font-family: "Roboto Slab", serif;
+   font-family: "Oswald", sans-serif;
+*/
+
+body, .home {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #5d5bc4 0%, #e7c9f1 50%, #5d5b5b 100%);
+  /* #0f2027 (dark blue-black), #2c5364 (blue), #ffffff (white) */
+  margin: 0;
+  padding: 0;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  /* Animation for entrance */
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.myform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px 28px;
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  gap: 10px;
+  min-width: 340px;
+  min-height: 380px;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.myform:focus-within {
+  box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.22);
+  transform: scale(1.02);
+}
+.myform em {
+  font-size: 30px;
+}
+.myform div {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+.myform .mydiv {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 11px;
+  text-align: right;
+  font-family: 'Segoe UI', Arial, sans-serif; /* Changed to normal */
+}
+.myform input {
+  width: 90%;
+  height: 40px;
+  padding: 0px 10px;
+  outline: none;
+  font-family: 'Segoe UI', Arial, sans-serif; /* Changed to normal */
+  font-style: normal; /* Remove italic */
+  font-size: 15px;
+  border: 0px;
+  border-bottom: 1px solid;
+}
+.styled-select {
+  width: 402px;
+  height: 30px;
+}
+.myform a {
+  font-family: 'Segoe UI', Arial, sans-serif; /* Changed to normal */
+  text-decoration: none;
+  color: grey;
+  font-style: normal; /* Remove italic */
+}
+.myform input::placeholder {
+  color: rgb(44, 44, 1);
+  font-family: 'Segoe UI', Arial, sans-serif; /* Changed to normal */
+  font-style: normal; /* Remove italic */
+  font-size: 12px;
+}
+.myform .second-div button {
+  height: 35px;
+  border: 0px;
+  background-color: rgb(90, 104, 229);
+  color: white;
+  cursor: pointer;
+  font-family: 'Segoe UI', Arial, sans-serif; /* Changed to normal */
+}
+.myform .second-div p {
+  text-align: right;
+}
+
+

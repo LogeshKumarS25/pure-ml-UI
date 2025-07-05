@@ -1,0 +1,225 @@
+.blogs-root {
+  padding: 40px 5vw;
+  background: linear-gradient(135deg, #f3f5f7 0%, #f4f8fb 100%);
+  min-height: 100vh;
+}
+
+.blogs-title {
+  text-align: center;
+  color: #2563eb;
+  margin-bottom: 32px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 12px rgba(44,83,100,0.08);
+}
+/* ...existing code above... */
+
+.blogs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  /* Add a little more space for three in a row */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blog-card {
+  background: #fafdff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(44,83,100,0.08), 0 1.5px 6px rgba(23,138,255,0.06);
+  width: 300px;
+  min-width: 260px;
+  max-width: 320px;
+  cursor: pointer;
+  transition: transform 0.18s cubic-bezier(.4,2,.6,1), box-shadow 0.18s, border 0.18s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  border: 1.5px solid #3f454d;
+  position: relative;
+  background: linear-gradient(120deg, #fafdff 80%, #eaf4ff 100%);
+}
+
+.blog-card:hover {
+  transform: translateY(-7px) scale(1.025);
+  box-shadow: 0 8px 24px 0 rgba(44,83,100,0.13), 0 2px 8px rgba(23,138,255,0.10);
+  border: 1.5px solid #178aff;
+  background: linear-gradient(120deg, #fafdff 60%, #e3f0ff 100%);
+}
+
+.blog-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  filter: brightness(0.98);
+  transition: filter 0.2s;
+}
+
+.blog-card:hover .blog-image {
+  filter: brightness(1.05) contrast(1.04);
+}
+
+/* ...existing code... */
+
+.blog-info {
+  padding: 16px 14px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: flex-start; /* Ensures vertical alignment */
+  min-height: 170px; /* Ensures all cards are same height if needed */
+}
+
+.blog-info p {
+  color: #222;
+  font-size: 0.98rem;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1.5;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-end;
+}
+
+.read-more-link {
+  color: #178aff;
+  font-weight: 600;
+  margin-left: 6px;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 0.98rem;
+  transition: color 0.18s;
+}
+.read-more-link:hover {
+  color: #2563eb;
+}
+
+/* ...rest of your code... */
+.blog-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  background: linear-gradient(90deg, #178aff 40%, #2563eb 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: background 0.2s;
+  line-height: 1.18;
+}
+
+.blog-card:hover h2 {
+  background: linear-gradient(90deg, #2563eb 30%, #111 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.blog-meta {
+  color: #2563eb;
+  font-size: 0.93rem;
+  margin-bottom: 7px;
+  font-weight: 600;
+  letter-spacing: 0.15px;
+}
+
+
+.blog-card:visited,
+.blog-card:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Blue dot for new blogs */
+.blog-card::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, #178aff 60%, #fff 100%);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: blog-dot-pulse 1.5s infinite alternate;
+}
+@keyframes blog-dot-pulse {
+  0% { box-shadow: 0 0 0 0 #178aff33; }
+  100% { box-shadow: 0 0 0 7px #178aff09; }
+}
+
+/* Modal for blog details (if you use it) */
+.blog-modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.blog-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  padding: 36px 32px;
+  max-width: 600px;
+  width: 95vw;
+  box-shadow: 0 8px 32px 0 rgba(44,83,100,0.18);
+  position: relative;
+  text-align: left;
+  border: 2px solid #178aff;
+}
+.blog-modal-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+.blog-modal button {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 18px;
+  transition: background 0.2s;
+}
+.blog-modal button:hover {
+  background: #178aff;
+}
+
+/* Responsive: 3 in a row on desktop, 2 on tablet, 1 on mobile */
+@media (max-width: 1100px) {
+  .blogs-list {
+    max-width: 700px;
+    gap: 18px;
+  }
+  .blog-card {
+    width: 45vw;
+    min-width: 220px;
+    max-width: 340px;
+  }
+}
+@media (max-width: 700px) {
+  .blogs-list {
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    max-width: 100vw;
+  }
+  .blog-card {
+    width: 98vw;
+    min-width: 0;
+  }
+}
